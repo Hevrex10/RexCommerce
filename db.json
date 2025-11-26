@@ -1,0 +1,235 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Classic Monochrome Tee",
+      "price": 25,
+      "image": "/ProductImg/number(1).png",
+      "description": "A timeless black t-shirt designed for everyday wear and comfort.",
+      "detail": "Crafted with 100% premium cotton for a soft, breathable fit that never fades.",
+      "category": "Apparel",
+      "colors": ["bg-black", "bg-gray-800", "bg-neutral-900"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tags": ["t-shirt", "black", "classic"],
+      "instock": true,
+      "reviews": [
+        { "user": "John Doe", "rating": 5, "comment": "Fits perfectly and feels soft.", "date": "2 weeks ago" },
+        { "user": "Amaka E.", "rating": 4, "comment": "Great quality but delivery took long.", "date": "1 weeks ago" },
+        { "user": "Samuel I.", "rating": 5, "comment": "Exactly what I wanted. Stylish and simple.", "date": "2 days ago" }
+      ],
+      "created_at": "2025-09-01T09:00:00Z",
+      "updatedat": "2025-10-01T11:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Urban Oversized Fit",
+      "price": 30,
+      "image": "/ProductImg/Find-Your.png",
+      "description": "Relaxed oversized gray tee for modern streetwear enthusiasts.",
+      "detail": "Loose fit with breathable fabric and reinforced seams for durability.",
+      "category": "Apparel",
+      "colors": ["bg-gray-500", "bg-gray-400", "bg-gray-600"],
+      "sizes": ["M", "L", "XL", "XXL"],
+      "tags": ["oversized", "streetwear", "gray"],
+      "instock": true,
+      "reviews": [
+        { "user": "Joy O.", "rating": 5, "comment": "Comfy and trendy, love the oversized look!", "date": "3 weeks ago" },
+        { "user": "Kenny F.", "rating": 4, "comment": "Good quality but runs slightly large.", "date": "1 month ago" },
+        { "user": "Lekan P.", "rating": 5, "comment": "Perfect for my casual outfits.", "date": "4 days ago" }
+      ],
+      "created_at": "2025-09-03T10:00:00Z",
+      "updatedat": "2025-10-01T15:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Essential Neutrals",
+      "price": 22,
+      "image": "/ProductImg/white.png",
+      "description": "Everyday basic tee made for ultimate comfort and simplicity.",
+      "detail": "Soft-touch cotton with minimal shrinkage and relaxed fit for casual wear.",
+      "category": "Apparel",
+      "colors": ["bg-blue-200", "bg-gray-400", "bg-amber-100"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tags": ["basic", "t-shirt", "neutral"],
+      "instock": true,
+      "reviews": [
+        { "user": "Ruth A.", "rating": 5, "comment": "Super soft and breathable!", "date": "5 days ago" },
+        { "user": "Jide B.", "rating": 4, "comment": "Nice minimal design.", "date": "2 weeks ago" },
+        { "user": "Chioma K.", "rating": 5, "comment": "Exactly as described, fits perfectly.", "date": "2 weeks ago" }
+      ],
+      "created_at": "2025-09-07T10:00:00Z",
+      "updatedat": "2025-10-02T10:30:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Raw Black T-Shirt Lineup",
+      "price": 28,
+      "image": "/ProductImg/Utra-Anet.png",
+      "description": "Raw-cut black t-shirt that blends edge and comfort.",
+      "detail": "Unfinished hems for a rugged aesthetic, yet soft on skin for daily wear.",
+      "category": "Apparel",
+      "colors": ["bg-black", "bg-gray-900", "bg-blue-900"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tags": ["raw", "casual", "black"],
+      "instock": true,
+      "reviews": [
+        { "user": "David N.", "rating": 5, "comment": "Love the raw finish — stylish!", "date": "1 weeks ago" },
+        { "user": "Tola O.", "rating": 4, "comment": "Quality fabric and nice feel.", "date": "2 days ago" }
+      ],
+      "created_at": "2025-09-10T08:30:00Z",
+      "updatedat": "2025-10-04T09:45:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Elegant Ebony Sweatshirts",
+      "price": 26,
+      "image": "/ProductImg/LongSleeve.png",
+      "description": "Soft sand-colored tee with a clean, modern cut.",
+      "detail": "Tailored fit, designed to complement both jeans and joggers.",
+      "category": "Apparel",
+      "colors": ["bg-amber-100", "bg-yellow-50", "bg-zinc-100"],
+      "sizes": ["S", "M", "L"],
+      "tags": ["minimal", "neutral", "tee"],
+      "instock": true,
+      "reviews": [
+        { "user": "Bisi A.", "rating": 5, "comment": "Color is perfect for layering.", "date": "2 days ago" },
+        { "user": "Korede D.", "rating": 4, "comment": "Soft fabric, but slightly tight at sleeves.", "date": "5 days ago" }
+      ],
+      "created_at": "2025-09-12T09:45:00Z",
+      "updatedat": "2025-10-05T13:00:00Z"
+    },
+    {
+      "id": "6",
+      "name": "Sleek and Cozy Black",
+      "price": 24,
+      "image": "/ProductImg/Hoodie.png",
+      "description": "Light gray t-shirt designed for comfort and ease of movement.",
+      "detail": "Stretchable cotton blend ideal for active or relaxed wear.",
+      "category": "Apparel",
+      "colors": ["bg-gray-300", "bg-gray-200", "bg-stone-400"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tags": ["comfort", "casual", "light"],
+      "instock": true,
+      "reviews": [
+        { "user": "Emmanuel O.", "rating": 5, "comment": "Soft, breathable, and lightweight.", "date": "6 days ago" },
+        { "user": "Nifemi K.", "rating": 4, "comment": "Color fades a little after many washes.", "date": "2 days ago" }
+      ],
+      "created_at": "2025-09-14T08:00:00Z",
+      "updatedat": "2025-10-06T09:30:00Z"
+    },
+    {
+      "id": "7",
+      "name": "Bold Streetwear Tee",
+      "price": 32,
+      "image": "/ProductImg/Mockup.png",
+      "description": "Statement piece for those who love expressive street fashion.",
+      "detail": "Oversized and bold graphics for a strong streetwear presence.",
+      "category": "Apparel",
+      "colors": ["bg-black", "bg-orange-500", "bg-blue-200"],
+      "sizes": ["M", "L", "XL"],
+      "tags": ["streetwear", "bold", "graphic"],
+      "instock": true,
+      "reviews": [
+        { "user": "Kelvin A.", "rating": 5, "comment": "Cool design, I wear it all the time.", "date": "2 days ago" },
+        { "user": "Nancy T.", "rating": 4, "comment": "Print quality is great, slightly large fit.", "date": "2 days ago" }
+      ],
+      "created_at": "2025-09-16T11:15:00Z",
+      "updatedat": "2025-10-07T10:00:00Z"
+    },
+    {
+      "id": "8",
+      "name": "Eco Cotton Tee",
+      "price": 27,
+      "image": "/ProductImg/Nike.png",
+      "description": "Sustainably made t-shirt using 100% organic cotton.",
+      "detail": "Eco-friendly, soft-touch material for the conscious minimalist.",
+      "category": "Apparel",
+      "colors": ["bg-lime-700", "bg-green-600", "bg-yellow-800"],
+      "sizes": ["S", "M", "L"],
+      "tags": ["eco", "organic", "cotton"],
+      "instock": true,
+      "reviews": [
+        { "user": "Fola M.", "rating": 5, "comment": "Love that it’s eco-friendly.", "date": "2 days ago" },
+        { "user": "Ify N.", "rating": 5, "comment": "Soft and breathable. Feels premium!", "date": "2 weeks ago" }
+      ],
+      "created_at": "2025-09-18T09:30:00Z",
+      "updatedat": "2025-10-08T12:00:00Z"
+    },
+    {
+      "id": "9",
+      "name": "Athletic Flex Tee",
+      "price": 29,
+      "image": "/ProductImg/sportWear.png",
+      "description": "Performance t-shirt built for workouts and casual wear.",
+      "detail": "Moisture-wicking fabric with stretch for enhanced movement.",
+      "category": "Sportswear",
+      "colors": ["bg-blue-900", "bg-blue-500", "bg-gray-400"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tags": ["active", "sports", "flex"],
+      "instock": true,
+      "reviews": [
+        { "user": "James I.", "rating": 5, "comment": "Perfect for gym and running!", "date": "1 weeks ago" },
+        { "user": "Temi E.", "rating": 4, "comment": "Fits well, dries fast.", "date": "3 weeks ago" }
+      ],
+      "created_at": "2025-09-20T07:45:00Z",
+      "updatedat": "2025-10-10T08:45:00Z"
+    },
+    {
+      "id": "10",
+      "name": "Classic Crew Neck",
+      "price": 21,
+      "image": "/ProductImg/thickHoodie.png",
+      "description": "Simple crew neck tee for timeless everyday looks.",
+      "detail": "Soft material with double-stitched seams for durability.",
+      "category": "Apparel",
+      "colors": ["bg-blue-200", "bg-black"],
+      "sizes": ["S", "M", "L"],
+      "tags": ["crewneck", "classic", "everyday"],
+      "instock": true,
+      "reviews": [
+        { "user": "Grace E.", "rating": 5, "comment": "A wardrobe staple.", "date": "2 days ago" },
+        { "user": "Olu S.", "rating": 4, "comment": "Nice quality for the price.", "date": "4 days ago" }
+      ],
+      "created_at": "2025-09-22T10:30:00Z",
+      "updatedat": "2025-10-12T14:00:00Z"
+    },
+    {
+      "id": "11",
+      "name": "Vintage Wash Tee",
+      "price": 35,
+      "image": "/ProductImg/shirt.png",
+      "description": "Retro-inspired washed tee with a worn-in look.",
+      "detail": "Stonewashed cotton blend for a unique, vintage aesthetic.",
+      "category": "Apparel",
+      "colors": ["bg-blue-500", "bg-gray-500", "bg-black"],
+      "sizes": ["M", "L", "XL"],
+      "tags": ["vintage", "retro", "washed"],
+      "instock": true,
+      "reviews": [
+        { "user": "Damilola A.", "rating": 5, "comment": "Looks even better in person!", "date": "2 days ago" },
+        { "user": "Uche K.", "rating": 4, "comment": "Love the retro vibe.", "date": "1 month ago" }
+      ],
+      "created_at": "2025-09-25T09:15:00Z",
+      "updatedat": "2025-10-14T09:30:00Z"
+    },
+    {
+      "id": "12",
+      "name": "UrbanFlex Shirt",
+      "price": 33,
+      "image": "/ProductImg/urbanflex.png",
+      "description": "Relaxed-fit t-shirt made with premium stretch cotton.",
+      "detail": "Perfect blend of comfort and elegance for daily wear.",
+      "category": "Apparel",
+      "colors": ["bg-blue-200", "bg-yellow-50", "bg-amber-700"],
+      "sizes": ["S", "M", "L", "XL"],
+      "tags": ["premium", "relaxed", "cotton"],
+      "instock": true,
+      "reviews": [
+        { "user": "Chika M.", "rating": 5, "comment": "Super soft, feels luxurious.", "date": "2 month ago" },
+        { "user": "Segun A.", "rating": 5, "comment": "Best tee I’ve bought in years!", "date": "2 weeks ago" }
+      ],
+      "created_at": "2025-09-27T08:00:00Z",
+      "updatedat": "2025-10-15T11:00:00Z"
+    }
+  ]
+}

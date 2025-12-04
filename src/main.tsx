@@ -32,7 +32,7 @@ import UserProfile from "./Acount/UserProfile";
 import Admin from "./ui/Admin";
 import Dashboard, { allOrderLoader } from "./Admin/Dashboard";
 import Products from "./Admin/Products";
-import Customer from "./Admin/Customer";
+import Customer, { customerLoader } from "./Admin/Customer";
 import Review, { ReviewLoader } from "./Admin/Review";
 import Settings from "./Admin/Settings";
 import AdminPage from "./Admin/AdminPage";
@@ -40,6 +40,9 @@ import Orders, { adminOrderList } from "./Admin/Orders"
 import AdminLogin from "./Admin/AdminLogin";
 import { AdminproductLoader as loader } from "./Admin/Products";
 import AddProduct from "./Admin/AddProduct";
+import Contact from "./ui/Contact";
+import About from "./ui/About";
+import EditProduct, { editLoader } from "./Admin/EditProduct";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +87,14 @@ const router = createBrowserRouter([
         element: <Product />,
         loader: productDetailLoader,
         errorElement: <ErrorPage />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         element: <ProtectedRoute />,
@@ -165,6 +176,11 @@ const router = createBrowserRouter([
                 loader: loader,
               },
               {
+                path: "/admin/edit-product/:id",
+                element: <EditProduct />,
+                loader: editLoader,
+                 },
+              {
                 path: "add-products",
                 element: <AddProduct />,
               },
@@ -176,6 +192,7 @@ const router = createBrowserRouter([
               {
                 path: "customers",
                 element: <Customer />,
+                loader: customerLoader,
               },
               {
                 path: "reviews",

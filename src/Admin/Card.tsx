@@ -4,10 +4,14 @@ export function DashboardCard({
   text,
   price,
   children,
+  currency,
+  period = "THIS MONTH"
 }: {
   text: string;
-  price?: string;
+  price?: number;
   children: any;
+  currency?:string;
+  period?:string
 }) {
   return (
     <div className="gap-15 flex flex-col rounded-lg bg-white p-6 shadow-md">
@@ -15,12 +19,12 @@ export function DashboardCard({
         <div>
           <p className="font-['Inter'] text-base font-semibold text-zinc-900">{text}</p>
           <p className="justify-start font-['Inter'] text-xs font-medium uppercase leading-6 tracking-wide text-gray-600">
-            THIS MONTH
+           {period}
           </p>
         </div>
         <div>
           <div className="justify-start font-['Inter'] text-2xl font-bold text-zinc-900">
-            ${price}
+            {currency}{price}
           </div>
         </div>
       </div>
@@ -29,7 +33,8 @@ export function DashboardCard({
   );
 }
 
-export function BestSelling() {
+export function BestSelling({top3Products,totalPrice}:any) {
+
   return (
     <div className="flex flex-col gap-5 rounded-lg bg-white shadow-md">
       <div className="flex items-center justify-between border-b border-gray-200 p-5">
@@ -43,7 +48,7 @@ export function BestSelling() {
       <div className="flex flex-col gap-7 px-5 pb-7">
         <div className="flex">
           <div className="flex items-center justify-start gap-3">
-            <p className="justify-start font-['Inter'] text-2xl font-bold text-zinc-900">$2,400</p>
+            <p className="justify-start font-['Inter'] text-2xl font-bold text-zinc-900">${totalPrice}</p>
 
             <p className="justify-start font-['Inter'] text-xl font-medium leading-6 text-gray-600">
               ---- Total Sales
@@ -51,9 +56,8 @@ export function BestSelling() {
           </div>
         </div>
         <div className="flex flex-col gap-3">
-          <TotalSale product="Classic Monochrome tree" price="1220" />
-          <TotalSale product="Monochrome" price="1220" />
-          <TotalSale product="Monochrome" price="1220" />
+          {top3Products.map((product:any)=> <TotalSale key={product.name} product={product.name} price={product.totalAmount} /> )}
+          
         </div>
         <div className="h-24 w-24">
           <img src="/images/Doughnut Chart.png" alt="Bar chart" />

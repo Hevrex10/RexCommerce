@@ -34,8 +34,8 @@ const wishSlice = createSlice({
         saveToLocalStorage(state.wishlist);
       }
     },
-    removeFromWishlist(state, action: PayloadAction<WishlistItem>) {
-      state.wishlist = state.wishlist.filter((item) => item.product_id !== action.payload.product_id);
+    removeFromWishlist(state, action: PayloadAction<number|string>) {
+      state.wishlist = state.wishlist.filter((item) => item.product_id !== action.payload);
       saveToLocalStorage(state.wishlist);
     },
     clearWishList(state) {

@@ -1,15 +1,24 @@
-import { useSelector } from "react-redux";
 import { supabase } from "../supabaseCl";
 import { handleUXError } from "./ApiError";
 
 export async function fetchProducts() {
-  const { data, error } = await supabase.from("ProductList").select("*");
+  const { data: products, error } = await supabase.from("ProductList").select("*");
 
   if (error) {
     handleUXError(error);
+    return [];
   }
 
-  return data;
+  const productsImages = products.map((product) => {
+    const { data: imageData } = supabase.storage.from("Images").getPublicUrl(product.image);
+
+    return {
+      ...product,
+      image: imageData.publicUrl,
+    };
+  });
+
+  return productsImages;
 }
 
 export async function fetchCart() {
@@ -31,11 +40,11 @@ export async function fetchOrderList() {
     console.error("Error getting user:", userError);
     return [];
   }
-  if (!user) return []; 
+  if (!user) return [];
 
   const { data, error } = await supabase
     .from("Orders")
-    .select("orderitems") 
+    .select("orderitems")
     .eq("user_id", user.id)
     .order("created_at", { ascending: false });
 
@@ -50,7 +59,7 @@ export async function fetchOrderList() {
 export async function fetchAllOrders() {
   const { data, error } = await supabase
     .from("Orders")
-    .select("orderitems") 
+    .select("orderitems")
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -61,3 +70,13 @@ export async function fetchAllOrders() {
   return data;
 }
 
+export async function fetchAllCustomers() {
+  const { data, error } = await supabase.from("Orders").select("*");
+
+  if (error) {
+    console.error("Error fetching customers:", error);
+    return [];
+  }
+
+  return data;
+}

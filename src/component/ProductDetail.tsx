@@ -133,7 +133,7 @@ export function ProductInfo({ like }: any) {
     };
 
     if (liked) {
-      dispatch(removeFromWishlist(likedProduct));
+      dispatch(removeFromWishlist(id));
       setLiked(false);
 
       const { error } = await supabase
@@ -168,9 +168,9 @@ export function ProductInfo({ like }: any) {
     setLiked(!!lovedItems);
   }, [wishlist, id]);
 
-  const yaya = (!itemColor && !itemSize) || (
-    <NotificationCard text="Please select both color and size before adding to cart" />
-  );
+  // const yaya = (!itemColor && !itemSize) || (
+  //   <NotificationCard text="Please select both color and size before adding to cart" />
+  // );
 
   return (
     <>

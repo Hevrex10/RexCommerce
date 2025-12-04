@@ -7,8 +7,11 @@ import { useLoaderData } from 'react-router-dom'
 
 export default function Review() {
   const details = useLoaderData() as any
-  const reviews = details.flatMap((d:any) => d.reviews)
-  
+  const reviews = details.flatMap((d:any) => d.reviews) 
+
+   const CustomersReviews = reviews.filter(
+  (review: any) => review !== null && review !== undefined
+);
   return (
  <PagesCard text="Customers">
       <table className="min-w-full items-center justify-center divide-y divide-gray-200">
@@ -18,7 +21,7 @@ export default function Review() {
           <ProductHeading text="Action" />
         </TableHead>
         <TableBody>
-          {reviews.map((review:any)=> <ReviewList key={review.comment} img={review.image} name={review.user} review={review.comment}/>)}
+          {CustomersReviews.map((review:any)=> <ReviewList key={review.comment}  name={review.user ?? "" } review={review.comment ?? ""}/>)}
         </TableBody>
       </table>
     </PagesCard>

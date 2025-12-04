@@ -32,8 +32,6 @@ export default function AdminLogin() {
 
     const user = session?.user;
 
-    console.log("USER:", user);
-
     const role = user?.user_metadata?.role;
 
     dispatch(setRole(role));

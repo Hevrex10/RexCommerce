@@ -93,7 +93,7 @@ export default function ProductList({ allProduct }: { allProduct: any }) {
             
             <div className="outline outline-gray-200 max-w-full flex flex-col pl-4 pr-3 pt-6 pb-8 gap-12">
               <div className="flex flex-col gap-4">
-                <RxCross2 className="hover:cursor-pointer" onClick={handleVisibility}/>
+                <RxCross2 className="hover:cursor-pointer text-2xl" onClick={handleVisibility}/>
                 <p className="text-gray-900 text-sm font-medium font-['Inter'] leading-6">
                   Categories
                 </p>
@@ -160,7 +160,7 @@ export default function ProductList({ allProduct }: { allProduct: any }) {
           <div className="max-w-[813px] w-full flex flex-col gap-6 h-screen overflow-x-scroll ">
             <div className="max-w-full flex flex-col gap-3">
               
-           <RxHamburgerMenu onClick={handleVisibility} className={`${isVisible ? "block": "hidden"} hover:cursor-pointer`}/> 
+           <RxHamburgerMenu onClick={handleVisibility} className={`${isVisible ? "block": "hidden"} hover:cursor-pointer text-2xl`}/> 
          
               <p className="text-black text-sm font-medium font-['Inter'] leading-6">
                 Applied Filter:

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { IoIosStarOutline } from "react-icons/io";
 import { Product } from "../Type/Type";
@@ -7,7 +7,6 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 export default function Details({ product }: { product: Product }) {
   const [selected, setSelected] = useState<"Review" | "Details">("Review");
-  // console.log(product)
   const { detail } = product;
 
   return (
@@ -55,7 +54,8 @@ export default function Details({ product }: { product: Product }) {
 }
 
 function Review({ product }: { product: Product }) {
-  const reviews = product.reviews;
+ const reviews = product.reviews ?? [];
+
   return (
     <div className="w-full max-w-3xl flex flex-col gap-6">
       <div className="border-b pb-6 border-zinc-300">

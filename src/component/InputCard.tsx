@@ -1,15 +1,18 @@
-import { PiPlaceholder } from "react-icons/pi";
 
 function InputCard({
   text,
   name,
   type,
   accept,
+  placeholder,
+  onChange
 }: {
   text: string;
   name?:string;
   type?:string;
-  accept?:any
+  accept?:any;
+  placeholder?:string
+  onChange?:any
 }) {
   return (
     <>
@@ -21,6 +24,8 @@ function InputCard({
           type={type}
           name={name}
           accept={accept}
+          placeholder={placeholder}
+          onChange={onChange}
           className={`w-full px-5 py-2 rounded-md outline outline-gray-200 text-gray-500 text-sm font-medium font-['Inter']`}
         />
       </div>

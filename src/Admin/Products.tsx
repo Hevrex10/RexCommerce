@@ -6,11 +6,17 @@ import { useState } from "react";
 
 export default function Products() {
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [openActionId, setOpenActionId] = useState<number | null>(null);
 
   const products = useLoaderData() as any;
   const filteredProducts = products.filter((product: any) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  function handleAction(id: number) {
+    setOpenActionId((prev) => (prev === id ? null : id));
+  }
+
   return (
     <PagesCard text="Products" setSearchTerm={setSearchTerm} searchTerm={searchTerm}>
       <table className="min-w-full items-center justify-center divide-y divide-gray-200">
@@ -33,6 +39,8 @@ export default function Products() {
                 price={p.price}
                 stock={p.instock}
                 categories={p.category}
+                isOpen={openActionId === p.id}
+                handleAction={() => handleAction(p.id)}
               />
             ))
           ) : (

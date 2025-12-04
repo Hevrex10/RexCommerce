@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Color } from './Card';
 
-export default function ColorComponent() {
-   const [selectedColors, setSelectedColors] = useState<string[]>([]);
+export default function ColorComponent({selectedColors,setSelectedColors}:{selectedColors:any,setSelectedColors:any}) {
+
     const colors = [
       "bg-white",
       "bg-blue-500",
@@ -14,8 +14,8 @@ export default function ColorComponent() {
     ];
   
     function toggleColor(color: string) {
-      setSelectedColors((prev) =>
-        prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color]
+      setSelectedColors((prev:string[]) =>
+        prev.includes(color) ? prev.filter((c:string) => c !== color) : [...prev, color]
       );
     }
   return (
@@ -32,7 +32,7 @@ export default function ColorComponent() {
               ))}
             </div>
             <div className="flex flex-wrap gap-3 pb-2">
-              {selectedColors.map((color, index) => (
+              {selectedColors.map((color:string, index:any) => (
                 <span key={index} className="rounded bg-gray-100 px-2 py-1 text-sm text-gray-700">
                   {color.replace("bg-", "")}
                 </span>

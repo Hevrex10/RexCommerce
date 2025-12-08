@@ -168,10 +168,6 @@ export function ProductInfo({ like }: any) {
     setLiked(!!lovedItems);
   }, [wishlist, id]);
 
-  // const yaya = (!itemColor && !itemSize) || (
-  //   <NotificationCard text="Please select both color and size before adding to cart" />
-  // );
-
   return (
     <>
       <div className="gid-cols-1 gap-30 mx-auto w-full max-w-[1092px] px-5 lg:grid lg:grid-cols-2">

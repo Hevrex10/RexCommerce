@@ -5,9 +5,31 @@ import { useLoaderData } from "react-router-dom";
 
 export default function Dashboard() {
   const [ordersData, customerData] = useLoaderData() as any;
-  const orders = ordersData.flatMap((order: any) => order.orderitems);
-  const customers = new Set(customerData.map((c: any) => c.user_Id)).size;
 
+  const now = new Date();
+  const currentMonth = now.getMonth();
+  const currentYear = now.getFullYear();
+  console.log(ordersData);
+
+  const orders = ordersData.flatMap((order: any) =>
+    order.orderitems.filter((item: any) => {
+      const orderDate = new Date(item.date);
+      return orderDate.getMonth() === currentMonth && orderDate.getFullYear() === currentYear;
+    })
+  );
+
+  const customers = new Set(
+    customerData
+      .filter((c: any) => {
+        const customerOrders = ordersData.find((o: any) => o.user_Id === c.user_Id);
+        if (!customerOrders) return false;
+        return customerOrders.orderitems.some((item: any) => {
+          const orderDate = new Date(item.date);
+          return orderDate.getMonth() === currentMonth && orderDate.getFullYear() === currentYear;
+        });
+      })
+      .map((c: any) => c.user_Id)
+  ).size;
 
   const orderTarget = 100;
   const orderLength = orders.length;

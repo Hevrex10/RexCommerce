@@ -36,7 +36,7 @@ export function DashboardCard({
 export function BestSelling({top3Products,totalPrice}:any) {
 
   return (
-    <div className="flex flex-col gap-5 rounded-lg bg-white shadow-md">
+    <div className="flex flex-col gap-5 rounded-lg bg-white shadow-md h-[437px]">
       <div className="flex items-center justify-between border-b border-gray-200 p-5">
         <div className="flex flex-col gap-2">
           <p className="font-['Inter'] text-base font-semibold text-zinc-900">Best Selling</p>

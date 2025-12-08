@@ -5,7 +5,7 @@ function InputBox({
 }: {
   text: string;
   name:string
-  required:boolean|undefined
+  required?:boolean|undefined
 }) {
   return (
     <>

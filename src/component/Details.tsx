@@ -4,9 +4,10 @@ import { IoIosStarOutline } from "react-icons/io";
 import { Product } from "../Type/Type";
 import { FaAngleDown } from "react-icons/fa6";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import ReviewForm from "./ReviewForm";
 
 export default function Details({ product }: { product: Product }) {
-  const [selected, setSelected] = useState<"Review" | "Details">("Review");
+  const [selected, setSelected] = useState<"Review" | "Details" | "write review">("Review");
   const { detail } = product;
 
   return (
@@ -46,15 +47,17 @@ export default function Details({ product }: { product: Product }) {
 
         <div className="text-gray-600 text-sm font-normal font-['Inter'] leading-6">
           {selected === "Details" && <p className="whitespace-pre-line">{detail}</p>}
-          {selected === "Review" && <Review product={product} />}
+          {selected === "Review" && <Review product={product} setSelected={setSelected} />}
+          {selected === "write review" && <ReviewForm product={product}/>}
         </div>
       </main>
     </section>
   );
 }
 
-function Review({ product }: { product: Product }) {
+function Review({ product,setSelected }: { product: Product, setSelected:any }) {
  const reviews = product.reviews ?? [];
+ console.log(reviews)
 
   return (
     <div className="w-full max-w-3xl flex flex-col gap-6">
@@ -68,7 +71,7 @@ function Review({ product }: { product: Product }) {
           </span>
         </div>
 
-        <button className=" px-6 py-3 border border-gray-900 rounded font-medium text-sm ">
+        <button onClick={() => setSelected("write review")} className=" px-6 py-3 border border-gray-900 rounded font-medium text-sm ">
           Write a review
         </button>
         <div className="flex justify-end">

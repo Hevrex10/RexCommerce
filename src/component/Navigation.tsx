@@ -20,8 +20,9 @@ export default function Navigation() {
     location.pathname === "/admin/reviews" ||
     location.pathname === "/admin/settings" ||
     location.pathname === "/admin-login" ||
-    location.pathname === "/admin/add-products";
-
+    location.pathname === "/admin/add-products" ||
+    location.pathname.startsWith("/admin/edit-product/");
+    
   const navigate = useNavigate();
   const navigation = useNavigation();
   const isTrue = navigation.state === "loading";

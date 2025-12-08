@@ -7,7 +7,6 @@ import { fetchAllCustomers } from "../Api/ProductApi";
 
 export default function Customer() {
    const customers = useLoaderData() as any
-   console.log(customers)
   return (
     <PagesCard text="Customers">
       <table className="min-w-full items-center justify-center divide-y divide-gray-200">

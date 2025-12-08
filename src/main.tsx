@@ -36,7 +36,7 @@ import Customer, { customerLoader } from "./Admin/Customer";
 import Review, { ReviewLoader } from "./Admin/Review";
 import Settings from "./Admin/Settings";
 import AdminPage from "./Admin/AdminPage";
-import Orders, { adminOrderList } from "./Admin/Orders"
+import Orders, { adminOrderList } from "./Admin/Orders";
 import AdminLogin from "./Admin/AdminLogin";
 import { AdminproductLoader as loader } from "./Admin/Products";
 import AddProduct from "./Admin/AddProduct";
@@ -68,6 +68,7 @@ const router = createBrowserRouter([
             path: "/reset-password",
             element: <ResetPassword />,
           },
+         
         ],
       },
       {
@@ -154,9 +155,10 @@ const router = createBrowserRouter([
             ],
           },
         ],
-      },{
-          path: "/admin-login",
-          element: <AdminLogin/>
+      },
+      {
+        path: "/admin-login",
+        element: <AdminLogin />,
       },
       {
         element: <Admin />,
@@ -168,7 +170,7 @@ const router = createBrowserRouter([
               {
                 path: "dashboard",
                 element: <Dashboard />,
-                loader: allOrderLoader
+                loader: allOrderLoader,
               },
               {
                 path: "products",
@@ -179,15 +181,15 @@ const router = createBrowserRouter([
                 path: "/admin/edit-product/:id",
                 element: <EditProduct />,
                 loader: editLoader,
-                 },
+              },
               {
                 path: "add-products",
                 element: <AddProduct />,
               },
               {
                 path: "orders",
-                element: <Orders/>,
-                loader: adminOrderList
+                element: <Orders />,
+                loader: adminOrderList,
               },
               {
                 path: "customers",
@@ -220,5 +222,3 @@ createRoot(document.getElementById("root")!).render(
     </Provider>
   </StrictMode>
 );
-
-

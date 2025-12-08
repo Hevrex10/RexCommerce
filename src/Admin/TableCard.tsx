@@ -95,7 +95,7 @@ export function List({
         </td>
         <td className="whitespace-nowrap px-6 py-4">
           <p
-            className={`text-sm font-medium ${stock ? "text-gray-700" : "text-red-600"} font-['Inter']`}
+            className={`text-sm font-medium ${stock ? "text-blue-700" : "text-red-600"} font-['Inter']`}
           >
             {stock ? "INSTOCK" : "OUT OF STOCK"}
           </p>
@@ -119,7 +119,7 @@ export function List({
                 Edit product
               </li>
               <li
-                className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                className="cursor-pointer px-4 py-2 hover:bg-gray-100 text-red-500"
                 onClick={() => handleDeleteProduct(sku)}
               >
                 Delete product
@@ -179,7 +179,7 @@ export function OrdersList({
           ...
         </button>
         {isOpen && (
-          <ul className="absolute right-0 top-2 mt-2 w-32 rounded border bg-white shadow-lg">
+          <ul className="absolute left-15 top-2 mt-2 w-32 rounded border bg-white shadow-lg">
             <li
               className="cursor-pointer px-4 py-2 hover:bg-gray-100"
               onClick={() => {
@@ -189,7 +189,7 @@ export function OrdersList({
               Approved
             </li>
             <li
-              className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+              className="cursor-pointer px-4 py-2 text-red-600 hover:bg-gray-100"
               onClick={() => {
                 setprogress("Cancelled");
               }}
@@ -203,9 +203,54 @@ export function OrdersList({
   );
 }
 
-export function ReviewList({ name, review }: { name: string; review: string }) {
-  const parts = name.split(" ");
-  const initials = parts[0][0] + "" + parts[1][0];
+export function ReviewList({
+  name,
+  review,
+  id,
+  isOpen,
+  handleAction,
+  productId,
+}: {
+  name: string;
+  review: string;
+  id: string;
+  isOpen: boolean;
+  handleAction: () => void;
+  productId: any;
+}) {
+  const parts = name.trim().split(" ");
+  const firstInitial = parts[0]?.[0] ?? "";
+  const secondInitial = parts[1]?.[0] ?? "";
+
+  const initials = (firstInitial + secondInitial).toUpperCase();
+
+  async function handleDeleteReview(productId: string, reviewId: string) {
+    if (!confirm("Are you sure you want to delete this review?")) return;
+
+    const { data, error: fetchError } = await supabase
+      .from("ProductList")
+      .select("reviews")
+      .eq("id", productId)
+      .single();
+
+    if (fetchError) {
+      alert("Error fetching product reviews");
+      return;
+    }
+
+    const updatedReviews = data.reviews.filter((review: any) => review.id !== reviewId);
+
+    const { error: updateError } = await supabase
+      .from("ProductList")
+      .update({ reviews: updatedReviews })
+      .eq("id", productId);
+
+    if (updateError) {
+      alert("Error deleting review");
+    } else {
+      window.location.reload();
+    }
+  }
 
   return (
     <tr>
@@ -222,8 +267,23 @@ export function ReviewList({ name, review }: { name: string; review: string }) {
         <p className="font-['Inter'] text-sm font-medium text-gray-700">{review}</p>
       </td>
 
-      <td className="whitespace-nowrap px-6 py-4">
-        <p className="font-['Inter'] text-sm font-medium text-gray-700">{"..."}</p>
+      <td className="relative whitespace-nowrap px-6 py-4">
+        <button
+          onClick={handleAction}
+          className="font-['Inter'] text-sm font-medium text-gray-700 hover:cursor-pointer"
+        >
+          {"..."}
+        </button>
+        {isOpen && (
+          <ul className="absolute left-12 lg:right-1 top-2 right-0 mt-2 w-32 rounded border bg-white shadow-lg  ">
+            <li
+              className="cursor-pointer px-4 py-2 text-red-600 hover:bg-gray-100"
+              onClick={() => handleDeleteReview(productId, id)}
+            >
+              Delete
+            </li>
+          </ul>
+        )}
       </td>
     </tr>
   );

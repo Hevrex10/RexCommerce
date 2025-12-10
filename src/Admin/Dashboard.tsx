@@ -9,7 +9,6 @@ export default function Dashboard() {
   const now = new Date();
   const currentMonth = now.getMonth();
   const currentYear = now.getFullYear();
-  console.log(ordersData);
 
   const orders = ordersData.flatMap((order: any) =>
     order.orderitems.filter((item: any) => {

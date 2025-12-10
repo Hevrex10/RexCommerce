@@ -119,7 +119,7 @@ export function List({
                 Edit product
               </li>
               <li
-                className="cursor-pointer px-4 py-2 hover:bg-gray-100 text-red-500"
+                className="cursor-pointer px-4 py-2 text-red-500 hover:bg-gray-100"
                 onClick={() => handleDeleteProduct(sku)}
               >
                 Delete product
@@ -179,7 +179,7 @@ export function OrdersList({
           ...
         </button>
         {isOpen && (
-          <ul className="absolute left-15 top-2 mt-2 w-32 rounded border bg-white shadow-lg">
+          <ul className="left-15 absolute top-2 mt-2 w-32 rounded border bg-white shadow-lg">
             <li
               className="cursor-pointer px-4 py-2 hover:bg-gray-100"
               onClick={() => {
@@ -275,7 +275,7 @@ export function ReviewList({
           {"..."}
         </button>
         {isOpen && (
-          <ul className="absolute left-12 lg:right-1 top-2 right-0 mt-2 w-32 rounded border bg-white shadow-lg  ">
+          <ul className="absolute left-12 right-0 top-2 mt-2 w-32 rounded border bg-white shadow-lg lg:right-1">
             <li
               className="cursor-pointer px-4 py-2 text-red-600 hover:bg-gray-100"
               onClick={() => handleDeleteReview(productId, id)}
@@ -292,10 +292,14 @@ export function CustomerList({
   name,
   email,
   address,
+  isOpen,
+  handleClick,
 }: {
   name: string;
   email: string;
   address: string;
+  isOpen: boolean;
+  handleClick: () => void;
 }) {
   const parts = name.trim().split(" ");
   const first = parts[0]?.[0] || "";
@@ -321,8 +325,20 @@ export function CustomerList({
         <p className="font-['Inter'] text-sm font-medium text-gray-700">{address}</p>
       </td>
 
-      <td className="whitespace-nowrap px-6 py-4">
-        <p className="font-['Inter'] text-sm font-medium text-gray-700">{"..."}</p>
+      <td className="relative whitespace-nowrap px-6 py-4">
+        <button
+          onClick={handleClick}
+          className="font-['Inter'] text-sm font-medium text-gray-700 hover:cursor-pointer"
+        >
+          {"..."}
+        </button>
+
+        {isOpen && (
+          <ul className="absolute left-15 top-6 mt-2 w-32 rounded border bg-white shadow-lg">
+            <li className="cursor-pointer px-4 py-2 text-Blue-600 hover:bg-gray-100">Block user</li>
+            <li className="cursor-pointer px-4 py-2 text-red-600 hover:bg-gray-100">UnBlock user</li>
+          </ul>
+        )}
       </td>
     </tr>
   );
